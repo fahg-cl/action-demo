@@ -1,26 +1,20 @@
-name: Node.js CI
-
-on:
-	push:
-		branches: [ main ]
+name: Node.js CI  
+on: #Evento
+  push: 
+    branches: [ main ]
   pull_request:
     branches: [ main ]
-
-jobs:
-  build-and-test:
-    runs-on: ubuntu-latest
-  
-    steps:
-      - name: Clonar repositorio
-        uses: actions/checkout@v3
-
-      - name: Usar Node.js
-        uses: actions/setup-node@v3      
-        with:
-          node-version: '18'
-
-      - name: Instalar dependencias
-        run: npm install
-
-      - name: Ejecutar pruebas
-        run: npm test
+jobs: #Tareas
+ build-and-test:
+  runs-on: ubuntu-latest # Runner
+  steps:
+    - name: Clonar repositorio #1
+      uses: actions/checkout@v3
+    - name: Usar Node.js # 2
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+    - name: Instalar dependencias # 3
+      run: npm install
+    - name: Ejecutar pruebas # 4
+      run: npm test
