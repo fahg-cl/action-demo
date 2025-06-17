@@ -1,4 +1,5 @@
 name: Node.js CI
+
 on:
 	push:
 		branches: [ main ]
@@ -11,15 +12,15 @@ jobs:
   
     steps:
       - name: Clonar repositorio
-      uses: actions/checkout@v3
+        uses: actions/checkout@v3
 
       - name: Usar Node.js
-      uses: actions/setup-node@v3      
-      with:
-        node-version: '18'
+        uses: actions/setup-node@v3      
+        with:
+          node-version: '18'
 
       - name: Instalar dependencias
-      run: npm install
+        run: npm install
 
       - name: Ejecutar pruebas
-      run: npm test
+        run: npm test
